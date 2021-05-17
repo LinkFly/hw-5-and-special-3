@@ -49,5 +49,19 @@ void rotate_array(T ar[], size_t arSize, int64_t nRotate) {
 
 template<typename T>
 bool is_balance_array(T ar[], size_t arSize) {
-	return true;
+	if (arSize < 2) return false;
+	struct {
+		bool operator()(T ar[], size_t arSize, size_t mid) {
+			int left = 0, right = 0;
+			for(size_t i = 0; i < mid; ++i)
+				left += ar[i];
+			for(size_t j = mid; j < arSize; ++j)
+				right += ar[j];
+			return left == right;
+		}
+	} checkMid;
+	for(size_t i = 1; i < arSize; ++i)
+		if (checkMid(ar, arSize, i))
+			return true;
+	return false;
 }

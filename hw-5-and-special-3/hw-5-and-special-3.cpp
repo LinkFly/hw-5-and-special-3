@@ -153,7 +153,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     // for task4
     static int arTask4[] = { 1, 2, 3, 4, 5 };
     // for task5
+    //static int arTask5[] = {1, 1, 1, 2, 1};
+    //static int arTask5[] = { 2, 1, 1, 2, 1 };
     static int arTask5[] = {10, 1, 2, 3, 4};
+    
 
     static HWND hBtn, hBtnTask2, hBtnTask3, hBtnTask4, hBtnTask5,
                 hTask1Result, hTask2Result, hTask3Result, hTask4Result, hTask5Result;
@@ -254,7 +257,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 			if (lParam == (LPARAM)hBtnTask5) {
 				SetOutputWnd(hTask5Result);
-                OutputIsBalanceArray(arInts);
+                OutputIsBalanceArray(arTask5);
 				return 0;
 			}
             
